@@ -53,8 +53,8 @@ $(document).ready(function() {
                         '<div id="comment-id1" class="media">' +
                         '<p class="pull-right"><small>Только что</small></p>' +
                         '<div class="media-body">' +
-                        '<h4 class="media-heading user_name">' + postData["author"] + '</h4>' +
-                        '<p>' + postData["text"] + '</p>' +
+                        '<h4 class="media-heading user_name">' + author + '</h4>' +
+                        '<p>' + text + '</p>' +
                         '</div>' +
                         '</div>';
                     $("#post-comments-list").append(commentCode);
