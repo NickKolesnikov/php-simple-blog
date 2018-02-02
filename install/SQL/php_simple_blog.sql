@@ -6,7 +6,7 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `comments`;
 CREATE TABLE `comments` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `post_id` text,
+  `post_id` int(10) unsigned,
   `author` varchar(32) DEFAULT NULL,
   `text` text,
   `datetime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
