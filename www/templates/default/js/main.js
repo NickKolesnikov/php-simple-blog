@@ -32,7 +32,7 @@ $(document).ready(function() {
     {
         var postId = urlParams["id"];
         var author = $('#new-comment-author').val();
-        var text = $('#new-comment-text').val();
+        var text = ($('#new-comment-text').val()).replace(/\n\r?/g, '<br />');
 
         var postData = {
             postId: postId,
@@ -77,7 +77,7 @@ $(document).ready(function() {
     {
         var author = $('#new-post-author').val();
         var title = $('#new-post-title').val();
-        var text = $('#new-post-text').val();
+        var text = ($('#new-post-text').val()).replace(/\n\r?/g, '<br />');
 
         var postData = {
             author: author,
