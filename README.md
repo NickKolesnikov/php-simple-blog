@@ -12,8 +12,8 @@
 - Конфигурируем доступы к БД в переменных $dbName, $dbUser, $dbPass (config/db.php)
 
 ## Посмотреть скриншоты можно по ссылкам:
-[Главная страница]<https://clip2net.com/s/3RA7sP0><br>
-[Страница добавления записи]<https://clip2net.com/s/3RA7Rvl>
-[Страница с записью]<https://clip2net.com/s/3RA87nd>
-[Комментарии к записи]<https://clip2net.com/s/3RA8cAO>
-[Страница about]<https://clip2net.com/s/3RA823U>
+Главная страница: <https://clip2net.com/s/3RA7sP0><br>
+Страница добавления записи: <https://clip2net.com/s/3RA7Rvl><br>
+Страница с записью: <https://clip2net.com/s/3RA87nd><br>
+Комментарии к записи: <https://clip2net.com/s/3RA8cAO><br>
+Страница about: <https://clip2net.com/s/3RA823U><br>
