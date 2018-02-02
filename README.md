@@ -1,1 +1,2 @@
 # php-simple-blog
+<hr>
