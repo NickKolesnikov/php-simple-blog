@@ -10,3 +10,10 @@
 - Загружаем содержимое на веб-сервер
 - Импортируем дамп структуры в БД (install/SQL/php_simple_blog.sql)
 - Конфигурируем доступы к БД в переменных $dbName, $dbUser, $dbPass (config/db.php)
+
+## Посмотреть скриншоты можно по ссылкам:
+[Главная страница]<https://clip2net.com/s/3RA7sP0>
+[Страница добавления записи]<https://clip2net.com/s/3RA7Rvl>
+[Страница с записью]<https://clip2net.com/s/3RA87nd>
+[Комментарии к записи]<https://clip2net.com/s/3RA8cAO>
+[Страница about]<https://clip2net.com/s/3RA823U>
