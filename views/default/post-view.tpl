@@ -6,7 +6,7 @@
             </div>
             <br />
             <div class="single-grid">
-                <p><?php echo $post['text'];?></p>
+                <p><?php echo nl2br($post['text']);?></p>
             </div>
 
             <div class="clearfix"></div>
@@ -49,7 +49,7 @@
                                 <p class="pull-right"><small><?php echo $item['datetime'];?></small></p>
                                 <div class="media-body">
                                     <h4 class="media-heading user_name"><?php echo $item['author'];?></h4>
-                                    <p><?php echo $item['text'];?></p>
+                                    <p><?php echo nl2br($item['text']);?></p>
                                 </div>
                             </div>
                         <?php
