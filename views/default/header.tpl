@@ -32,10 +32,6 @@
 
         <!---Top nav---->
         <div class="top-menu">
-            <div class="head-title">
-                <h5>Just follow this ;)</h5>
-            </div>
-            <span class="menu"> </span>
             <ul>
                 <li><a href="?controller=index&action=index">ГЛАВНАЯ</a></li>
                 <li><a href="?controller=post&action=add">ДОБАВИТЬ ЗАПИСЬ</a></li>
