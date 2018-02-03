@@ -14,7 +14,6 @@
 
 ## Посмотреть скриншоты можно по ссылкам:
 Главная страница: <https://clip2net.com/s/3RAWLw6><br>
-Страница добавления записи: <https://clip2net.com/s/3RA7Rvl><br>
-Страница с записью: <https://clip2net.com/s/3RA87nd><br>
-Комментарии к записи: <https://clip2net.com/s/3RA8cAO><br>
-Страница about: <https://clip2net.com/s/3RA823U><br>
+Страница добавления записи: <https://clip2net.com/s/3RAWNkF><br>
+Просмотр записи: <https://clip2net.com/s/3RAWPLb><br>
+Просмотр записи (2): <https://clip2net.com/s/3RAWQ7i><br>
