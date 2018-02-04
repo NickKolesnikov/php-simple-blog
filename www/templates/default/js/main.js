@@ -51,10 +51,10 @@ $(document).ready(function() {
                     //Добавляем комментарий на страницу
                     var commentCode = '' +
                         '<div id="comment-id1" class="media">' +
-                        '<p class="pull-right"><small>Только что</small></p>' +
-                        '<div class="media-body">' +
-                        '<h4 class="media-heading user_name">' + author + '</h4>' +
-                        '<p>' + text + '</p>' +
+                            '<p class="pull-right"><small>Только что</small></p>' +
+                            '<div class="media-body">' +
+                                '<h4 class="media-heading user_name">' + author + '</h4>' +
+                                '<p>' + text + '</p>' +
                         '</div>' +
                         '</div>';
                     $("#post-comments-list").append(commentCode);

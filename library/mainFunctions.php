@@ -42,7 +42,7 @@ function loadTemplate($viewGenerator, $templateName)
  * @param bool $die Останавливать ли дальнейшее выполнение скрипта после вывода
  *
  */
-function d($value = null, $die = 1)
+function d($value = null, $die = TRUE)
 {
     echo "Debug <br /><pre>";
     print_r($value);

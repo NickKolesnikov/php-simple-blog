@@ -10,7 +10,9 @@ class ViewGenerator
     }
   
     public function assign($name, $value='') {
-        if (is_array($name)) foreach($name as $k=>$v) $this->_var[$k] = $v;
+        if (is_array($name)) {
+            foreach($name as $k=>$v) $this->_var[$k] = $v;
+        }
         else $this->_var[$name] = $value;
     }
   

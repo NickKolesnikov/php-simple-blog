@@ -29,7 +29,7 @@
                             <img src="<?php echo $templateWebPath;?>images/slider-background.jpg">
                             <div class="carousel-caption">
                                 <h3><?php echo $item['title'];?></h3>
-                                <p><?php echo $item['text'];?></p>
+                                <p><?php echo nl2br($item['text']);?></p>
                                 <div class="carousel-caption-bottom1">
                                     <a>Автор: <?php echo $item['author'];?></a><br />
                                     <a>Комментариев: <?php echo $item['comments_count'];?></a><br />
@@ -98,7 +98,7 @@
                         <div class="content-grid-info">
                             <div class="post-info">
                                 <h4><a href="?controller=post&action=view&id=<?php echo $item['id'];?>"><?php echo $item['title'];?></a>  <?php echo $item['datetime'];?> / Комментариев: <?php echo $item['comments_count'];?></h4>
-                                <p><?php echo $item['text'];?></p>
+                                <p><?php echo nl2br($item['text']);?></p>
                                 <a href="?controller=post&action=view&id=<?php echo $item['id'];?>"><span></span>ЧИТАТЬ ДАЛЕЕ</a>
                             </div>
                         </div>

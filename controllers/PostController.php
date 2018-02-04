@@ -65,6 +65,9 @@ function ajaxAddCommentAction()
     $resData = array();
     if (addNewCommentForPost($post_id, $author, $text)) {
         $resData['success'] = 1;
+    } else {
+//        $resData['error'] = 1;
+//        $resData['error_text'] = "";
     }
 
     echo json_encode($resData);
@@ -86,6 +89,9 @@ function ajaxAddAction()
     if ($newPost !== -1) {
         $resData['success'] = 1;
         $resData['new_post_id'] = $newPost;
+    } else {
+//        $resData['error'] = 1;
+//        $resData['error_text'] = "";
     }
 
     echo json_encode($resData);
