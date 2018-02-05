@@ -65,11 +65,11 @@ function getAllPostsWithCommentsCount($db, $textLength = "100")
 function getTopPostsWithCommentsCount($db, $count, $text_length = "100")
 {
     $sql = 'SELECT posts.id, posts.author, posts.title, LEFT(posts.text, ' . $text_length . ') AS text,
-            LENGTH(posts.text) AS text_length, posts.datetime, COUNT(post_id) AS post_count
+            LENGTH(posts.text) AS text_length, posts.datetime, COUNT(post_id) AS comments_count
             FROM posts LEFT JOIN comments
             ON posts.id = comments.post_id
             GROUP BY posts.id
-            ORDER BY post_count DESC';
+            ORDER BY comments_count DESC';
 
     if ($count) {
         $sql .= ' LIMIT ' . $count;
@@ -79,11 +79,6 @@ function getTopPostsWithCommentsCount($db, $count, $text_length = "100")
 
     $rsPosts = array();
     while ($row = mysqli_fetch_assoc($query)) {
-        $commentsCount = getCommentsCountForPost($db, $row['id']);
-        if ($commentsCount) {
-            $row['comments_count'] = $commentsCount;
-        }
-
         if ($row['text_length'] >= $text_length) {
             $row['text'] .= "...";
         }
