@@ -6,22 +6,16 @@
  */
 
 $dbLocation = "127.0.0.1";
-$dbName = "";
-$dbUser = "";
+$dbName = "testing1";
+$dbUser = "root";
 $dbPass = "";
 
-// соединяемся с БД
-$db = mysqli_connect($dbLocation, $dbUser, $dbPass);
+$dbConfig = array(
+    'host'=>'127.0.0.1',
+    'user'=>'root',
+    'pass'=>'',
+    'db'=>'testing1',
+    'charset'=>'utf8'
+);
 
-if (!$db) {
-    echo "Ошибка доступа к MySQL";
-    exit();
-}
-
-// устанавливаем кодировку по умолчанию для текущего соединения
-$db->set_charset("utf-8");
-
-if (!mysqli_select_db($db, $dbName)) {
-    echo "Ошибка доступа к базе данных: {$dbName}";
-    exit();
-}
+$db = new SafeMySQL($dbConfig);

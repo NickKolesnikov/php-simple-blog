@@ -15,8 +15,8 @@
  */
 function getAllCommentsForPost($db, $id)
 {
-    $sql = 'SELECT id, author, text, datetime FROM comments WHERE post_id = ' . $id;
-    $query = mysqli_query($db, $sql);
+    $sql = 'SELECT id, author, text, datetime FROM comments WHERE post_id = ?i';
+    $query = $db->query($sql, $id);
 
     $rsComments = array();
     while ($row = mysqli_fetch_assoc($query)) {
@@ -37,9 +37,9 @@ function getAllCommentsForPost($db, $id)
 function addNewCommentForPost($id, $author, $text)
 {
     require '../config/' . 'db.php'; // инициализация базы данных
-    $sql = 'INSERT INTO comments VALUES (NULL, ' . $id . ', "' . mysqli_real_escape_string($db, $author) . '", "' . mysqli_real_escape_string($db, $text) . '", NOW())';
-
-    if (mysqli_query($db, $sql)) {
+    $sql = 'INSERT INTO comments VALUES (NULL, ?i, ?s, ?s, NOW())';
+    $query = $db->query($sql, $id, $author, $text);
+    if ($query) {
         return 1;
     } else {
         return 0;
@@ -57,8 +57,8 @@ function addNewCommentForPost($id, $author, $text)
  */
 function getLastComments($db, $count = "10", $text_length = "100")
 {
-    $sql = "SELECT id, post_id, author, LEFT(comments.text, $text_length) AS text, LENGTH(comments.text) AS text_length FROM comments ORDER BY datetime DESC LIMIT " . $count;
-    $query = mysqli_query($db, $sql);
+    $sql = "SELECT id, post_id, author, LEFT(comments.text, ?i) AS text, LENGTH(comments.text) AS text_length FROM comments ORDER BY datetime DESC LIMIT ?i";
+    $query = $db->query($sql, $text_length, $count);
 
     $rsComments = array();
     while ($row = mysqli_fetch_assoc($query)) {

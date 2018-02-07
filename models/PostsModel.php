@@ -16,8 +16,8 @@ function getPostById($db, $id)
 {
     $sql = 'SELECT author, text, title, datetime
             FROM posts
-            WHERE id = ' . $id;
-    $query = mysqli_query($db, $sql);
+            WHERE id = ?i';
+    $query = $db->query($sql, $id);
 
     $post = mysqli_fetch_assoc($query);
     return $post;
@@ -32,11 +32,11 @@ function getPostById($db, $id)
  */
 function getAllPostsWithCommentsCount($db, $textLength = "100")
 {
-    $sql = 'SELECT id, author, title, LEFT(posts.text, ' . $textLength . ') AS text, LENGTH(posts.text) AS text_length, datetime
+    $sql = 'SELECT id, author, title, LEFT(posts.text, ?i) AS text, LENGTH(posts.text) AS text_length, datetime
             FROM posts
             ORDER BY datetime DESC';
-    $query = mysqli_query($db, $sql);
-
+    $query = $db->query($sql, $textLength);
+    
     $rsPosts = array();
     while ($row = mysqli_fetch_assoc($query)) {
         $commentsCount = getCommentsCountForPost($db, $row['id']);
@@ -64,18 +64,13 @@ function getAllPostsWithCommentsCount($db, $textLength = "100")
  */
 function getTopPostsWithCommentsCount($db, $count, $text_length = "100")
 {
-    $sql = 'SELECT posts.id, posts.author, posts.title, LEFT(posts.text, ' . $text_length . ') AS text,
+    $sql = 'SELECT posts.id, posts.author, posts.title, LEFT(posts.text, ?i) AS text,
             LENGTH(posts.text) AS text_length, posts.datetime, COUNT(post_id) AS comments_count
             FROM posts LEFT JOIN comments
             ON posts.id = comments.post_id
             GROUP BY posts.id
-            ORDER BY comments_count DESC';
-
-    if ($count) {
-        $sql .= ' LIMIT ' . $count;
-    }
-
-    $query = mysqli_query($db, $sql);
+            ORDER BY comments_count DESC LIMIT ?i';
+    $query = $db->query($sql, $text_length, $count);
 
     $rsPosts = array();
     while ($row = mysqli_fetch_assoc($query)) {
@@ -100,8 +95,8 @@ function getCommentsCountForPost($db, $id)
 {
     $sql = 'SELECT COUNT(*) as count
             FROM comments
-            WHERE post_id = ' . $id;
-    $query = mysqli_query($db, $sql);
+            WHERE post_id = ?i';
+    $query = $db->query($sql, $id);
 
     $countRs = mysqli_fetch_assoc($query);
     if ($countRs['count'] > 0) {
@@ -125,10 +120,11 @@ function addNewPost($author, $title, $text)
 {
     require '../config/' . 'db.php'; // инициализация базы данных
     $sql = 'INSERT INTO posts
-            VALUES (NULL, "' . mysqli_real_escape_string($db, $author) . '", "' . mysqli_real_escape_string($db, $title) . '", "' . mysqli_real_escape_string($db, $text) . '", NOW())';
+            VALUES (NULL, ?s, ?s, ?s, NOW())';
+    $query = $db->query($sql, $author, $title, $text);
     
-    if (mysqli_query($db, $sql)) {
-        return mysqli_insert_id($db);
+    if ($query) {
+        return $db->insertId();
     } else {
         /*Запрос не удался*/
         return -1;

@@ -17,7 +17,13 @@
 function loadPage($viewGenerator, $db, $controllerName, $actionName = 'index')
 {
     include_once PATH_PREFIX . $controllerName . PATH_POSTFIX;
-
+    
+    //проверка есть ли у нас такой экшн
+    if (!function_exists($actionName . 'Action')) {
+        echo "404 Not found";
+        exit();
+    }
+    
     $function = $actionName . 'Action';
 	$function($viewGenerator, $db);
 }
@@ -50,5 +56,21 @@ function d($value = null, $die = TRUE)
 
     if ($die) {
         die();
+    }
+}
+
+/**
+ *
+ * Функция очистки POST
+ *
+ * @param $val Имя пост переменной
+ */
+function cleanPost($val) {
+    function cleanPost($val) {
+        if(!isset($_POST[$val])) {
+            $_POST[$val] = NULL;
+            return;
+        }
+        $_POST[$val] = trim(htmlentities($_POST[$val], ENT_QUOTES, 'UTF-8'));
     }
 }

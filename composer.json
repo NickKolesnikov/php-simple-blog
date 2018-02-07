@@ -1,0 +1,19 @@
+{
+  "name": "nickkolesnikov/php-simple-blog",
+  "description": "PHP simple blog",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Nick Kolesnikov",
+      "email": "dev.nick.kolesnikov@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "require-dev": {},
+  "autoload": {
+    "classmap":["config","controllers","install","library","models","views","www"]
+  }
+
+}
