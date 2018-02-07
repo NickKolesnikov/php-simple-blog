@@ -12,6 +12,14 @@
 - Конфигурируем доступы к БД в переменных $dbName, $dbUser, $dbPass (config/db.php)
 - Настраиваем содержимое страницы About (views/default/about.tpl)
 
+## Установка через Composer:
+Для установки пакета необходимо включить в свой composer.json: 
+'''
+"require": {
+  "nickkolesnikov/php-simple-blog": "dev-master"
+}
+'''
+
 ## Посмотреть скриншоты можно по ссылкам:
 Главная страница: <https://clip2net.com/s/3RAWLw6><br>
 Страница добавления записи: <https://clip2net.com/s/3RAWNkF><br>
