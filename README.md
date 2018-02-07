@@ -14,11 +14,11 @@
 
 ## Установка через Composer:
 Для установки пакета необходимо включить в свой composer.json: 
-'''
+```
 "require": {
   "nickkolesnikov/php-simple-blog": "dev-master"
 }
-'''
+```
 
 ## Посмотреть скриншоты можно по ссылкам:
 Главная страница: <https://clip2net.com/s/3RAWLw6><br>
