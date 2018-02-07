@@ -11,8 +11,8 @@ $controllerName = isset($_GET['controller']) ? ucfirst($_GET['controller']) : 'I
 
 //проверка есть ли у нас такой контроллер
 $allowedControllers = array('Index', 'Info', 'Post');
-if (array_key_exists($controllerName, $allowedControllers)) {
-    echo "404 Not foundc";
+if (array_search($controllerName, $allowedControllers) === false) {
+    echo "404 Not found";
     exit();
 }
 

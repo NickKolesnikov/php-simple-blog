@@ -88,7 +88,7 @@ $(document).ready(function() {
         $.ajax({
             type: 'POST',
             async: false,
-            url: "http://localhost/php-simple-blog/www/?controller=post&action=ajaxadd",
+            url: "?controller=post&action=ajaxadd",
             data: postData,
             dataType: "json",
             success: function(data){

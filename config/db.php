@@ -5,11 +5,6 @@
  *
  */
 
-$dbLocation = "127.0.0.1";
-$dbName = "testing1";
-$dbUser = "root";
-$dbPass = "";
-
 $dbConfig = array(
     'host'=>'127.0.0.1',
     'user'=>'root',
